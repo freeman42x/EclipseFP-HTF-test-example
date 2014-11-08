@@ -1,0 +1,22 @@
+name:           TutorialHTF
+version:        0.1
+cabal-version:  >=1.8
+build-type:     Simple
+author:         Razvan
+
+library
+  hs-source-dirs:   src
+  build-depends:    base >= 4
+  ghc-options:      -Wall -fno-warn-type-defaults
+  exposed-modules:  Tutorial.Lib
+
+test-suite TutorialTest
+  type:            exitcode-stdio-1.0
+  main-is:         TutorialTest.hs
+  ghc-options:     -Wall -rtsopts -fno-warn-type-defaults
+  build-depends:   
+                  base >= 4, HTF > 0.9,
+                  TutorialHTF
+  other-modules:   Tutorial.LibTest
+  hs-source-dirs:  test
+
